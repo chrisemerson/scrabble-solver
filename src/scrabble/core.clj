@@ -38,7 +38,8 @@
         (distinct (map sort
             ; Flatten results into a single list of hands, where a hand is a vector [] of chars representing tiles
             (apply concat (map
-                ; Recurse function - for each possible current hand, try adding each tile left in the bag to it. Repeat the process with the new list until our hand is full.
+                ; Recurse function - for each possible current hand, try adding each tile left in the bag to it.
+                ; Repeat the process with the new list until our hand is full.
                 #(possible-hands (conj current-hand %) (take-tile bag %) (dec count))
                 (keys bag)))))))
 
