@@ -60,7 +60,7 @@
 (defn -main
     [& args]
     ; We must have the Z, Q, X and J tiles in our hand in order to reach a score of 46.
-    ; Without one of these the maximum we can get is 45.
+    ; Without all of these the maximum we can get is 45.
     (let [hands (possible-hands-of-given-size-and-score 3 46 [\Z \Q \X \J])]
         (run! println hands)
         (println)
